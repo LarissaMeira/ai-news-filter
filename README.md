@@ -56,7 +56,7 @@ I turned these three principles into a Claude Cowork plugin that runs the whole 
 
 </div>
 
-**Step 1 — It reads your real context.** The plugin pulls from your calendar (next 7 days), your notes (last 7-14 days), and Claude's memory of your recent conversations. This builds a relevance profile: what are you working on, what tools are you using, what's on your mind this week.
+**Step 1 — It reads your real context.** The plugin pulls from your calendar (last 7 days), your notes (last 7-14 days), and Claude's memory of your recent conversations. This builds a relevance profile: what are you working on, what tools are you using, what's on your mind this week.
 
 **Step 2 — It searches only trusted sources.** 8-15 targeted web searches across Labs, Apps, Funds, and Key People. Primary sources only — official blogs, direct posts, published papers. No aggregators, no SEO content.
 
@@ -115,7 +115,7 @@ The plugin works with just Claude's memory. But connecting these makes the filte
 
 | Tool | What it adds |
 |---|---|
-| 📅 **Calendar** (Google Calendar, Outlook) | Reads your next 7 days to infer focus areas |
+| 📅 **Calendar** (Google Calendar, Outlook) | Reads your last 7 days to infer focus areas |
 | 📝 **Notes** (Notion, Obsidian) | Reads recent pages to identify active projects |
 
 ### 4. Run it

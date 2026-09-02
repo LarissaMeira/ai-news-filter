@@ -36,7 +36,7 @@
 <text class="th" x="44" y="100">1. Your context</text>
 <rect class="teal-box" x="44" y="114" width="180" height="52" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
 <text class="teal-th th" x="134" y="134" text-anchor="middle" dominant-baseline="central" fill="#085041">📅 Calendar</text>
-<text class="teal-ts ts" x="134" y="152" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">Next 7 days</text>
+<text class="teal-ts ts" x="134" y="152" text-anchor="middle" dominant-baseline="central" fill="#0F6E56">Last 7 days</text>
 
 <rect class="teal-box" x="244" y="114" width="180" height="52" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
 <text class="teal-th th" x="334" y="134" text-anchor="middle" dominant-baseline="central" fill="#085041">📝 Notes</text>
