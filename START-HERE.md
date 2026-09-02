@@ -22,6 +22,10 @@ Copy everything inside the box below and paste it there. Click the 📋 button i
 ```
 Project Instructions — AI News Filter
 
+Skill
+
+This project uses the skill "ai-news-filter". When the user asks for AI news, updates, digest, or says /news, always activate this skill and follow its full instructions.
+
 Purpose
 
 This project is a personalized AI news curation system. It pulls news from trusted sources, crosses them with the user's real-world context (projects, calendar, recent activity), and delivers only what's relevant. Less noise, more signal.
