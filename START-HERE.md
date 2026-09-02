@@ -17,7 +17,7 @@ Everything you need to set up the AI News Filter in Claude. No downloads, just c
 
 Inside your new project, click the ⚙️ icon to open project settings. Find the **Project Instructions** field.
 
-Copy everything inside the box below and paste it there:
+Copy everything inside the box below and paste it there. Click the 📋 button in the top-right corner of the box to copy it all at once.
 
 ```
 Project Instructions — AI News Filter
@@ -68,7 +68,7 @@ Respond in the same language the user writes in.
 
 Still in the project settings, find the **Skills** section and click **Add Content**.
 
-Copy everything inside the box below and paste it:
+Copy everything inside the box below and paste it. Click the 📋 button in the top-right corner of the box to copy it all at once.
 
 ```
 ---
