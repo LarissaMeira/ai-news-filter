@@ -99,66 +99,9 @@ The result: instead of 45 minutes scrolling through noise, you spend 5 minutes r
 
 ---
 
-## Quick start
+## 👉 [Start Here — Step by Step](START-HERE.md)
 
-### 1. Download the plugin
-
-Click on [`ai-news-filter.plugin`](ai-news-filter.plugin) in the file list above, then click the **Download** button (↓) to save the file to your computer.
-
-### 2. Create a project in Claude
-
-1. Go to [claude.ai](https://claude.ai)
-2. On the left sidebar, click **Projects**
-3. Click **Create Project**
-4. Name it "AI News Filter" (or whatever you prefer)
-5. In the project settings, paste the project instructions from [`project-instructions.md`](project-instructions.md) — these define your trusted sources and customization rules
-
-### 3. Add the skill to the project
-
-1. Inside your project, go to **Settings → Skills**
-2. Click **Add Skill** and upload the `ai-news-filter.plugin` file you downloaded
-3. The skill is now active inside that project
-
-### 4. Connect your tools (optional but recommended)
-
-The plugin works with just Claude's memory. But connecting these makes the filter sharper:
-
-| Tool | What it adds | How to connect |
-|---|---|---|
-| 📅 **Google Calendar** | Reads your last 7 days to infer focus areas | Enable in Settings → Connected Apps |
-| 📝 **Notion** | Reads recent pages to identify active projects | Enable in Settings → Connected Apps |
-
-### 5. Run it
-
-Open a conversation inside the project and say:
-
-```
-AI news
-/news
-What happened in AI this week?
-```
-
-### 6. Schedule it (optional)
-
-To run it automatically every week:
-
-1. Open **Claude Desktop → Cowork**
-2. Create a new task: "Run the AI News Filter skill"
-3. Set it to **repeat weekly** on the day you prefer (e.g. every Friday at 8am)
-
----
-
-## Customize it
-
-Just tell Claude what you want. Changes persist across conversations.
-
-| Say this | What happens |
-|---|---|
-| "Add Hugging Face to my sources" | New source tracked |
-| "I don't care about image generation" | Topic blocked |
-| "Make the filter broader" | More items per digest |
-| "Also monitor AI regulation" | New topic added |
-| "Remove Midjourney" | Source removed |
+**New here?** Open the **[START-HERE.md](START-HERE.md)** file for the complete setup guide — from creating the project in Claude to scheduling your weekly digest. Takes about 5 minutes.
 
 ---
 
