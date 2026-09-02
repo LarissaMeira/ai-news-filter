@@ -24,7 +24,7 @@ Two layers:
 - **General memory**: everything you already know about the user (projects, field of work, tools they use, declared interests, role, company). This forms the base relevance profile.
 - **Last 7 days of conversations**: search recent chats using the conversation search tool. Extract mentioned projects, tools tested, recurring questions, and topics where the user showed active interest. This captures the hot context — what's on the user's mind right now.
 
-### 1b. ~~Calendar (next 7 days)
+### 1b. ~~Calendar (last 7 days)
 Fetch events from the last 7 days. Extract:
 - Project names mentioned in event titles
 - Meetings with clients or partners (indicate focus areas)

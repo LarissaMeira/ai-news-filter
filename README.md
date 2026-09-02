@@ -101,24 +101,36 @@ The result: instead of 45 minutes scrolling through noise, you spend 5 minutes r
 
 ## Quick start
 
-### 1. Download
+### 1. Download the plugin
 
-Download [`ai-news-filter.plugin`](ai-news-filter.plugin) from this repo.
+Click on [`ai-news-filter.plugin`](ai-news-filter.plugin) in the file list above, then click the **Download** button (↓) to save the file to your computer.
 
-### 2. Install
+### 2. Create a project in Claude
 
-Open Claude Desktop → Cowork → drag the `.plugin` file or use the install menu.
+1. Go to [claude.ai](https://claude.ai)
+2. On the left sidebar, click **Projects**
+3. Click **Create Project**
+4. Name it "AI News Filter" (or whatever you prefer)
+5. In the project settings, paste the project instructions from [`project-instructions.md`](project-instructions.md) — these define your trusted sources and customization rules
 
-### 3. Connect your tools (optional)
+### 3. Add the skill to the project
+
+1. Inside your project, go to **Settings → Skills**
+2. Click **Add Skill** and upload the `ai-news-filter.plugin` file you downloaded
+3. The skill is now active inside that project
+
+### 4. Connect your tools (optional but recommended)
 
 The plugin works with just Claude's memory. But connecting these makes the filter sharper:
 
-| Tool | What it adds |
-|---|---|
-| 📅 **Calendar** (Google Calendar, Outlook) | Reads your last 7 days to infer focus areas |
-| 📝 **Notes** (Notion, Obsidian) | Reads recent pages to identify active projects |
+| Tool | What it adds | How to connect |
+|---|---|---|
+| 📅 **Google Calendar** | Reads your last 7 days to infer focus areas | Enable in Settings → Connected Apps |
+| 📝 **Notion** | Reads recent pages to identify active projects | Enable in Settings → Connected Apps |
 
-### 4. Run it
+### 5. Run it
+
+Open a conversation inside the project and say:
 
 ```
 AI news
@@ -126,7 +138,13 @@ AI news
 What happened in AI this week?
 ```
 
-Or schedule it as a **weekly Cowork task** (I run mine every Friday morning).
+### 6. Schedule it (optional)
+
+To run it automatically every week:
+
+1. Open **Claude Desktop → Cowork**
+2. Create a new task: "Run the AI News Filter skill"
+3. Set it to **repeat weekly** on the day you prefer (e.g. every Friday at 8am)
 
 ---
 
