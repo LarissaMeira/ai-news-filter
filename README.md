@@ -52,7 +52,7 @@ I turned these three principles into a Claude Cowork plugin that runs the whole 
 
 <div align="center">
 
-<img src="docs/how-it-works.svg" alt="AI News Filter flow: context → search → filter → deliver" width="680">
+<img src="src/docs/how-it-works.svg" alt="AI News Filter flow: context → search → filter → deliver" width="680">
 
 </div>
 
