@@ -101,7 +101,7 @@ The result: instead of 45 minutes scrolling through noise, you spend 5 minutes r
 
 ## 👉 [Start Here — Step by Step](START-HERE.md)
 
-**New here?** Open the **[START-HERE.md](START-HERE.md)** file for the complete setup guide — from creating the project in Claude to scheduling your weekly digest. Takes about 5 minutes.
+**Want to use this?** Open **[START-HERE.md](START-HERE.md)** and follow the guide. No downloads — just copy and paste two text blocks into Claude. Takes 5 minutes.
 
 ---
 
