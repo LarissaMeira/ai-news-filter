@@ -1,9 +1,0 @@
-{
-  "name": "ai-news-filter",
-  "version": "0.1.0",
-  "description": "Personalized AI news curation — pulls from trusted sources, filters by your real-world context (projects, calendar, recent activity), and delivers only what matters.",
-  "author": {
-    "name": "Larissa"
-  },
-  "keywords": ["ai", "news", "curation", "filter", "digest", "weekly"]
-}
