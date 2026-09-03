@@ -50,19 +50,13 @@ It doesn't matter how many people say something is incredible. I don't know if i
 
 I turned these three principles into a system that runs inside Claude. Here's how it works:
 
-<div align="center">
-
-<img src="src/docs/how-it-works.svg" alt="AI News Filter flow: context → search → filter → deliver" width="680">
-
-</div>
-
-**Step 1 — It reads your real context.** It pulls from your calendar (last 7 days), your notes (last 7-14 days), and Claude's memory of your recent conversations. This builds a relevance profile: what are you working on, what tools are you using, what's on your mind this week.
+**Step 1 — It reads your real context.** It pulls from your calendar (last 7 days), your Notion (last 7-14 days), your Granola meeting transcripts (last 7 days), and Claude's memory of your recent conversations. This builds a relevance profile: what are you working on, what tools are you using, what's on your mind this week.
 
 **Step 2 — It searches only trusted sources.** 8-15 targeted web searches across Labs, Apps, Funds, and Key People. Primary sources only — official blogs, direct posts, published papers. No aggregators, no SEO content.
 
 **Step 3 — It filters by relevance.** Every news item gets crossed against your context. Does it impact a project you're working on? Does it involve a tool you already use? Can you test it today? If not, it gets cut.
 
-**Step 4 — It delivers 3-7 actionable items.** Each one explains *why it matters for you specifically*, not just what happened. Testable items include the path: which tool, which action, which link.
+**Step 4 — It delivers 8-15 actionable items.** Each one explains *why it matters for you specifically*, not just what happened. Testable items include the path: which tool, which action, which link.
 
 The result: instead of 45 minutes scrolling through noise, you spend 5 minutes reading what actually connects with your work.
 
@@ -76,7 +70,7 @@ The result: instead of 45 minutes scrolling through noise, you spend 5 minutes r
 
 ### ❌ Without the filter
 
-- 30+ articles across random sources
+- 100+ articles across random sources
 - Most are irrelevant to your work
 - No way to know what to test
 - 45 min scrolling, nothing actionable
@@ -87,7 +81,7 @@ The result: instead of 45 minutes scrolling through noise, you spend 5 minutes r
 
 ### ✅ With the filter
 
-- 3-7 items from trusted sources only
+- 8-15 items from trusted sources only
 - Each one explains why it matters **for you**
 - Testable items include how-to steps
 - 5 min reading, clear next actions
@@ -99,9 +93,7 @@ The result: instead of 45 minutes scrolling through noise, you spend 5 minutes r
 
 ---
 
-## How to set it up (5 minutes, no downloads)
-
-Everything below is copy and paste. No files to download, no packages to install.
+## How to set it up (5 minutes)
 
 ### Step 1 — Create a project in Claude
 
@@ -125,163 +117,60 @@ This project uses the skill "ai-news-filter". When the user asks for AI news, up
 
 Purpose
 
-This project is a personalized AI news curation system. It pulls news from trusted sources, crosses them with the user's real-world context (projects, calendar, recent activity), and delivers only what's relevant. Less noise, more signal.
+Personalized AI news curation. Pull from trusted sources, cross with the user's real context, deliver only what's relevant. Less noise, more signal.
 
 Connected Tools
 
 This project relies on:
-- Web search — to fetch news from trusted sources
-- Google Calendar — to read recent events and infer active focus areas
-- Notion — to read recent pages/databases and identify active projects
-- Claude's memory + recent conversations — to build the user's relevance profile
+- Web search — fetch news from trusted sources
+- Google Calendar — read last 7 days of events to infer focus areas
+- Notion — read recent pages/databases to identify active projects
+- Granola — read recent meeting transcripts for topics, decisions, and client context
+- Claude's memory + recent conversations — build the user's relevance profile
 
 Default Trusted Sources
-
-These are the starting defaults. You can add or remove sources at any time.
-
-Labs (model makers): OpenAI, Anthropic, Google DeepMind, Meta AI, Mistral, Cohere, Stability AI, Midjourney
-
-Apps (model consumers): Lovable, ElevenLabs, Cursor, Replit, Higgsfield, Vercel (v0), Perplexity, Notion AI, Canva AI, Figma AI
-
-Funds (investors): Sequoia, a16z, Y Combinator, Lightspeed, Accel
-
-Key People: Elena Verna, Boris Cherny, Andrej Karpathy, Tariq Shihipar, Sam Altman, Dario Amodei, Garry Tan, Satya Nadella, Jensen Huang, Demis Hassabis
-
-User Customization
-
-The user can personalize the skill over time by asking to:
-- Add or remove trusted sources (companies, people, funds)
-- Adjust the relevance filter (broader or stricter)
-- Change frequency (daily, 2x/week, weekly)
-- Add specific topics to monitor
-- Block topics they don't care about
-
-When the user makes any of these requests, save the change to Claude's memory so it persists across conversations. Always confirm what was saved.
-
-Language
-
-Respond in the same language the user writes in.
-```
-
-### Step 3 — Paste the skill prompt
-
-Still in the project settings, find the **Custom Instructions** or **Skills** section and click **Add Content**.
-
-Click the 📋 button in the top-right corner of the box below to copy, then paste it in.
-
-```
----
-name: ai-news-filter
-description: "Personalized AI news curation with relevance filtering. ALWAYS use this skill when the user asks for: AI news, AI updates, 'what happened in AI', 'news digest', 'AI summary', 'what do I need to know today', 'run the news filter', '/news', 'AI curation', 'AI digest', 'AI briefing'. Also trigger when the user asks 'anything new in AI?', 'what came out today?', 'lab updates', 'what did OpenAI/Anthropic/Google launch'. DO NOT use for technical AI questions, tutorials, or opinions about specific tools."
----
-
-# AI News Filter — Personalized AI News Curation
-
-Inspired by Deborah Folloni's method: consume fewer AI news, but better ones, filtered by what actually matters for your projects and life.
-
-## Principles
-
-1. Trusted sources only — no generic aggregators or clickbait
-2. Relevance filter — cross-reference news with the user's real context
-3. Test > accumulate — highlight what's testable and actionable, not just informational
-
-## Step 1 — Gather user context
-
-Before searching for news, gather the context that will serve as the relevance filter. Use all available sources:
-
-### 1a. Claude's memory
-Two layers:
-- General memory: everything you already know about the user (projects, field of work, tools they use, declared interests, role, company). This forms the base relevance profile.
-- Last 7 days of conversations: search recent chats using the conversation search tool. Extract mentioned projects, tools tested, recurring questions, and topics where the user showed active interest. This captures the hot context — what's on the user's mind right now.
-
-### 1b. Calendar (last 7 days)
-Fetch events from the last 7 days. Extract:
-- Project names mentioned in event titles
-- Meetings with clients or partners (indicate focus areas)
-- Workshops, demos, or presentations that happened (indicate hot topics)
-
-### 1c. Notes (last 14 days + last 7 days)
-Two time windows:
-- Last 14 days: search for pages indicating active projects and strategic direction. Look for pages with "project", "roadmap", "sprint", "OKR", "planning" in the title. This captures the big picture of what's in progress.
-- Last 7 days: search for recently edited pages (any type). This shows where the user is putting energy right now, which tasks and documents are hot.
-
-### Context synthesis
-Compile an internal list (do not show to the user) with:
-- Active projects: list of 3-8 projects/themes
-- Tools in use: which platforms and models the user uses
-- Field of work: sector, role, type of decisions they make
-- Declared interests: topics the user has mentioned wanting to follow
-
-If a source is unavailable (no calendar or notes connected), skip it and work with what you have. Memory alone is enough to build a useful filter.
-
-## Step 2 — Search news from trusted sources
-
-Search the web covering the 4 categories of trusted sources (Labs, Apps, Funds, Key People). Use 8-15 searches to cover the ground well. Searches should cover the last 7 days unless the user requests a different period.
 
 Labs: OpenAI, Anthropic, Google DeepMind, Meta AI, Mistral, Cohere, Stability AI, Midjourney
 Apps: Lovable, ElevenLabs, Cursor, Replit, Higgsfield, Vercel (v0), Perplexity, Notion AI, Canva AI, Figma AI
 Funds: Sequoia, a16z, Y Combinator, Lightspeed, Accel
 Key People: Elena Verna, Boris Cherny, Andrej Karpathy, Tariq Shihipar, Sam Altman, Dario Amodei, Garry Tan, Satya Nadella, Jensen Huang, Demis Hassabis
 
-Search rules:
-- Prefer primary sources: official company blogs, direct posts from key people, published papers
-- When a result looks relevant, use web_fetch to read the full content
-- Discard results from low-quality sites, SEO aggregators, or republished content
-- Include the date for each piece of news
+Default Search Period: last 7 days. The user can override this in the prompt or via the Cowork scheduled task.
 
-## Step 3 — Filter by relevance
+Default targets by period:
+- Last 3 days: 4-8 items
+- Last 7 days: 8-15 items
 
-For each piece of news found, evaluate relevance using the context from Step 1:
+Do not repeat news already delivered in previous runs.
 
-High relevance (always include):
-- Directly impacts an active project of the user
-- Involves a tool the user already uses
-- Opens a concrete opportunity for the user's work
-- Is testable now (new feature, API, free tool)
+User Customization
 
-Medium relevance (include if few high-relevance items):
-- Related to the user's sector but no direct impact
-- Important trend that may affect future decisions
-- Relevant market movement (funding, acquisition, partnership)
+The user can add/remove sources, adjust the filter, change frequency, add topics to monitor, or block topics. Save any change to Claude's memory and confirm what was saved.
 
-Low relevance (discard):
-- Generic news with no connection to the user's context
-- Unconfirmed rumor
-- Minor update with no practical impact
-- Social media drama without substance
+Language
 
-Target: deliver between 3 and 7 news items, never more than 10.
-
-## Step 4 — Deliver in chat
-
-Write the response directly in chat, in the user's language, following this structure:
-
-Start with one sentence contextualizing the period and intensity (quiet day, busy week, etc.).
-
-Then, for each piece of news:
-
-**Title** — Source
-2-3 sentence summary explaining what happened and why it matters for the user specifically. If testable, say how.
-
-Writing rules:
-- Direct and practical tone, no sensationalism
-- Always say why that news matters for the user, connecting to their project context
-- If something is testable, include the path: "You can test this in [tool] by doing [action]"
-- Don't repeat the same news from different angles
-- Always paraphrase, never copy snippets from sources
-- Cite the original source with link when available
-
-End with a short "To test" section listing the 1-3 most actionable items from the digest, if any.
+Respond in the same language the user writes in.
 ```
+
+### Step 3 — Add the skill
+
+Download the skill file [`ai-news-filter-skill.md`](ai-news-filter-skill.md) from this repo (click the file, then click the **Download raw file** button ↓).
+
+Then in Claude:
+1. Inside your project, click the **+** icon
+2. Go to **Skills → Manage Skills → Add → Upload Skill**
+3. Upload the `ai-news-filter-skill.md` file
+4. Done — the skill is now active
 
 ### Step 4 — Connect your tools (optional but recommended)
 
-The skill works with just Claude's memory. But connecting these makes the filter much sharper:
+The skill works with just Claude's memory. But connecting these makes the filter sharper:
 
 | Tool | What it adds | How to connect |
 |---|---|---|
-| 📅 **Google Calendar** | Reads your last 7 days to infer what you've been focused on | Claude.ai → Settings → Connected Apps → Google Calendar |
+| 📅 **Google Calendar** | Reads your last 7 days to infer focus areas | Claude.ai → Settings → Connected Apps → Google Calendar |
 | 📝 **Notion** | Reads recent pages to identify active projects | Claude.ai → Settings → Connected Apps → Notion |
+| 🎤 **Granola AI** | Reads meeting transcripts for topics, decisions, and client context | Claude.ai → Settings → Connected Apps → Granola |
 
 ### Step 5 — Run it
 
@@ -292,15 +181,16 @@ Open a conversation inside the project and say any of these:
 - `What happened in AI this week?`
 - `Run the news filter`
 
-That's it. Claude will gather your context, search trusted sources, filter by relevance, and deliver 3-7 actionable news items.
+That's it. Claude will gather your context, search trusted sources, filter by relevance, and deliver 8-15 actionable news items.
 
-### Step 6 — Schedule it weekly (optional)
+### Step 6 — Schedule it automatically (optional)
 
-To run it automatically every week without asking:
-
-1. Open **Claude Desktop → Cowork**
-2. Create a new task: `Run the AI News Filter skill`
-3. Set it to **repeat weekly** on the day you prefer (e.g. every Friday at 8am)
+1. Open your **AI News Filter** project in [claude.ai](https://claude.ai)
+2. In the project settings, scroll down to the **Scheduled** section
+3. Click **+**
+4. **Name**: `AI News - Weekly Briefing`
+5. **Prompt**: `Run the AI News Filter skill. Do not repeat news from previous runs.`
+6. **Cadence**: choose what works for you (weekly, every 3 days, etc.)
 
 ---
 
@@ -320,11 +210,13 @@ Just tell Claude what you want inside the project. Changes persist across conver
 
 ## Why I made these technical decisions
 
-**Three layers of context** — Memory alone gives you the big picture but misses what's hot this week. Calendar alone shows meetings but not projects. Notes alone shows documents but not conversations. The three together build a context that's both deep and current.
+**Four layers of context** — Memory gives the big picture. Calendar shows what you've been doing. Notion shows active projects. Granola captures what was discussed in meetings. Together they build a context that's both deep and current.
 
-**3-7 items, never more than 10** — This is a deliberate constraint. More than 10 and you're back to scrolling. The filter needs to be aggressive enough that what survives is genuinely worth your time.
+**8-15 items, scaled by period** — The target adjusts to how much time you're covering. 3 days gets 4-8 items, 7 days gets 8-15. Never pads with low-relevance items just to hit the number.
 
-**Sources separated from logic** — The trusted sources are listed explicitly so you can edit them without touching the core prompt. Add a company, remove a person, block a topic — all without breaking anything.
+**Sources separated from logic** — The trusted sources are listed in the project instructions so you can edit them without touching the skill. Add a company, remove a person, block a topic — all without breaking anything.
+
+**Period defined in project instructions, not in the skill** — The skill doesn't hardcode a time window. The project instructions set the default, and the user or Cowork schedule can override it. Each layer has its own job.
 
 ---
 
