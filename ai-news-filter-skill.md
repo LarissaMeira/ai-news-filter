@@ -51,6 +51,6 @@ Build a single PDF report, not a chat-only listing. Structure, in this order:
 1. **Header and context**: title, period covered, one paragraph summarizing the shape of the week.
 2. **The news, grouped by relevance (High, then Medium)**. Each item gets real substance, not a 2-3 sentence blurb: what actually happened, the concrete numbers/facts/quotes behind it, why it matters, and how to test it if testable. A reader should understand the story without needing to open the source.
 3. **What to apply**: 3-6 concrete actions, placed after the news. Each one names the specific tool or project it touches and a concrete next step, not generic advice like "keep an eye on this."
-4. **Sources**: a table listing every item with its source link.
+4. **Sources**: a table listing every item with its source link to click.
 
 Deliver the PDF as a file, not as pasted markdown in the chat window. Write the whole report in the same language the user's request was written in, even when the source articles are in a different language.
