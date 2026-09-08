@@ -28,6 +28,8 @@ Granola (last 7 days):
 Gmail (last 7 days, personal context only, not a news source):
 - Recent threads: sender/recipient names, subject lines, and active conversation topics. Skip newsletters, automated notifications, and marketing email, focus on real threads with clients, partners, or collaborators. This captures client names and active work threads that might not show up in Calendar or Notion.
 
+If a source isn't connected or a tool call fails, skip it silently and continue with whatever context is available — never stop the whole process over one missing source.
+
 ## Step 2 — Search trusted sources (8-15 searches)
 Search for the period specified by the user. If no period is given, use the default from the project instructions.
 
@@ -43,14 +45,14 @@ High (always include): impacts active project, involves tools in use, testable n
 Medium (include if few high): related to sector, important trend, market movement
 Low (discard): generic, unconfirmed, minor update, social media drama
 
-Target: deliver items according to the target defined in the project instructions. Never include low-relevance items just to fill the target.
+Target: deliver items according to the target defined in the project instructions. If no target is defined, default to 8-15 items for a 7-day period, scaled proportionally for shorter or longer periods. Never include low-relevance items just to fill the target.
 
 ## Step 4 — Deliver as a PDF report
-Build a single PDF report, not a chat-only listing. Structure, in this order:
+Build a single PDF report, not a chat-only listing. Use whatever PDF-generation capability is available in the environment (a PDF-authoring skill, a document tool, etc.) rather than improvising with raw text — the report needs real formatting, not a wall of markdown pasted into a page. Structure, in this order:
 
 1. **Header and context**: title, period covered, one paragraph summarizing the shape of the week.
 2. **The news, grouped by relevance (High, then Medium)**. Each item gets real substance, not a 2-3 sentence blurb: what actually happened, the concrete numbers/facts/quotes behind it, why it matters, and how to test it if testable. A reader should understand the story without needing to open the source.
 3. **What to apply**: 3-6 concrete actions, placed after the news. Each one names the specific tool or project it touches and a concrete next step, not generic advice like "keep an eye on this."
-4. **Sources**: a table listing every item with its source link to click.
+4. **Sources**: a table listing every item with its source link.
 
-Deliver the PDF as a file, not as pasted markdown in the chat window. Write the whole report in the same language the user's request was written in, even when the source articles are in a different language.
+Deliver the PDF as an actual file sent to the user, not just described in text — the task isn't done until the file itself has been handed over. Never paste the report as markdown in the chat window instead. Write the whole report in the same language the user's request was written in, even when the source articles are in a different language.
